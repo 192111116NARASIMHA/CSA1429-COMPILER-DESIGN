@@ -1,17 +1,15 @@
 %{
-int v=0,c=0;
 %}
+
 %%
-[aeiouAEIOU] {v=v+1;}
-[a-z A-Z] {c=c+1;}
+[6-9][0-9]{9} {printf("\n MOBILE NUMBER VALID\n");}
+.+ {printf("\n mobile number invalid \n");}
 %%
-int yywrap(void){}
+
+int yywrap(void) {}
+
 int main()
 {
-printf("\n enter the letter\n");
-yylex();
-printf("total vowels are:%d, \n"
-          "total consonants are:%d",
-                 v ,c);
-return 0;
+	printf("\n Mobile Number :");
+	yylex();
 }
