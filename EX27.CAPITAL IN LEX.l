@@ -3,7 +3,7 @@
 %}
 
 %%
-[A-Z]+[\t\n ] {printf("%s",yytext);}
+[A-Z]+[\t\n ] {printf("THE CAPITALS ARE :%s\n",yytext);}
 .|\n {}
 %%
 
