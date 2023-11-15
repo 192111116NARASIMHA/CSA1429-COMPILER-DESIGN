@@ -1,19 +1,14 @@
 %{
 #include <stdio.h>
 %}
-
 %%
-if      { printf("Keyword: if\n"); }
-else    { printf("Keyword: else\n"); }
-while   { printf("Keyword: while\n"); }
-[[:alpha:]]+[[:alnum:]_]*  { printf("Identifier: %s\n", yytext); }
-.       { /* Ignore other characters */ }
+int|float|char   { printf("Keyword: %s\n", yytext); }
+[A-Za-z][A-Za-z0-9_]*   { printf("Identifier: %s\n", yytext); }
+.|\n            { /* Ignore other characters */ }
 %%
-
 int yywrap() {
-    return 1; // Signal the end of input
+    return 1;
 }
-
 int main(void) {
     yylex();
     return 0;
