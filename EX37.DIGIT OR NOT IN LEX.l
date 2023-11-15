@@ -1,14 +1,15 @@
-%{
+ %{
 %}
+
 %%
-[0-9]+ {printf("\n digit\n");}
-.+ {printf("\n not a digit\n");}
+[0-9]*|[0-9]+"."[0-9] {printf("valid input");}
+.+ {printf("invalid");}
 %%
-int yywrap(void){}
-int main()
+
+int yywrap(void) {}
+int main(void)
 {
-printf("enter the digit");
+printf("Enter the input:");
 yylex();
-printf("\n");
 return 0;
 }
