@@ -2,8 +2,8 @@
 %}
 
 %%
-[0-9]*|[0-9]+"."[0-9]*  {printf("valid input");}
-.+ {printf("invalid");}
+[0-9]*|[0-9]*+"."[0-9]* {printf("valid input is a digit");}
+.+ {printf("invalid input is not digit");}
 %%
 
 int yywrap(void) {}
