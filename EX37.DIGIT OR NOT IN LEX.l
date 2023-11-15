@@ -2,7 +2,7 @@
 %}
 
 %%
-[0-9]*|[0-9]+"."[0-9] {printf("valid input");}
+[0-9]*|[0-9]+"."[0-9]*  {printf("valid input");}
 .+ {printf("invalid");}
 %%
 
